@@ -1,0 +1,35 @@
+<header class="header_div">
+    <div class="navbar">
+        <div class="logo"><a href=#>Fin-Edge</a></div>
+        <ul class="links">
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">Service</a></li>
+            <li><a href="#section3">About us</a></li>
+            <li><a href="#section4">Contact us</a></li>
+        </ul>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown_menu ">
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">Service</a></li>
+            <li><a href="#section3">About us</a></li>
+            <li><a href="#section4">Contact us</a></li>
+        </div>
+        
+    </div>
+</header>
+<script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.addEventListener('click', function() {
+    dropDownMenu.classList.toggle('open');
+    const isOpen = dropDownMenu.classList.contains('open');
+
+    toggleBtnIcon.className = isOpen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars';
+    });
+</script>

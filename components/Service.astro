@@ -1,0 +1,50 @@
+<section aria-label="Newest Photos" class="full">
+  <h1 class="service">Services We Provide</h1>
+    <div class="carousel" data-carousel>
+      <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+      <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+      <ul data-slides>
+        <li class="slide" data-active>
+          <h1 class="head1">Digital payments</h1>
+          <p class="text1">Fintech companies often offer digital payment solutions, allowing individuals and businesses to make electronic transactions securely 
+            and conveniently. This includes mobile wallets, peer-to-peer payment apps, and online payment gateways.</p>
+          <img class="img1" src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1647395476.webp" alt="Web Image #2">
+        </li>
+        <li class="slide">
+          <h1 class="head2">Personal Finance Management</h1>
+          <p class="text2">Fintech companies develop apps and platforms that help individuals manage their personal finances. These tools often provide budgeting, 
+            expense tracking, goal setting, and financial planning features.</p>
+          <img class="img2" src="https://theincmagazine.com/wp-content/uploads/2022/10/The-importance-of-effective-financial-management-in-todays-businesses-1024x570.jpg" alt="Nature Image #2">
+        </li>
+        <li class="slide">
+          <h1 class="head3">Insurance Technology</h1>
+          <p class="text3">Fintech companies are also involved in the insurance industry, offering innovative solutions such as online insurance marketplaces, 
+            digital claims processing, and personalized insurance products</p>
+          <img class="img3" src="https://i0.wp.com/businessday.ng/wp-content/uploads/2022/01/african-insurers-1.jpg?fit=700%2C400&ssl=1" alt="Nature Image #3">
+        </li>
+      </ul>
+    </div>
+  </section>
+
+<script>
+    
+    const buttons = document.querySelectorAll("[data-carousel-button]");
+
+    buttons.forEach(button => {
+    button.addEventListener("click", () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
+
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    if (newIndex < 0) newIndex = slides.children.length - 1;
+    if (newIndex >= slides.children.length) newIndex = 0;
+
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+  });
+})
+</script>
+

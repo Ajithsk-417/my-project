@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Home from "../components/Home.astro";
+import About from "../components/About.astro";
+import Service from "../components/Service.astro";
+import Contact from "../components/Contact.astro";
+---
+<main>
+    <div class="back">
+        <div class="sub">
+            <Layout />
+            <div id="section1" class="home1">
+                 <Home />
+            </div>
+        </div>
+        <div id="section2">
+            <Service />
+        </div>
+        <div id="section3">
+            <About />
+        </div >
+        <div id="section4">
+            <Contact />
+        </div>
+    </div>
+</main>
